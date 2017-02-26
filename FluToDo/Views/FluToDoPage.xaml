@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:FluToDo" 
+		x:Class="FluToDo.FluToDoPage" Title="ToDo List">
+	<StackLayout>
+		<Label Text="Here are your tasks" VerticalOptions="Start" HorizontalOptions="Center" />
+<!--		x:Name="todoListView"  ItemsSource="{Binding TodoList}"-->
+		<ListView x:Name="todoListView" ItemsSource="{Binding TodoList}"
+				ItemSelected="OnItemSelected" 
+				IsPullToRefreshEnabled="true" 
+				Refreshing="OnRefreshing">
+			<ListView.ItemTemplate>	
+				<DataTemplate>
+					<ViewCell>
+				        <ViewCell.ContextActions>
+				            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+				               Text="Delete" IsDestructive="True" />
+				        </ViewCell.ContextActions>
+						<StackLayout Padding="20,0,0,0" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+							<Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+							<Image Source="check.png" IsVisible="{Binding IsComplete}" />
+						</StackLayout>
+				    </ViewCell>					
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<Button Text="New" BackgroundColor="Blue" TextColor="White" Clicked="OnAddItem" />
+	</StackLayout>
+
+
+</ContentPage>
