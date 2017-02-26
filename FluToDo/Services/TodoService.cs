@@ -11,9 +11,9 @@ namespace FluToDo.Services
 {
 	public class TodoService : ITodoService
 	{
-		HttpClient client;
+		readonly HttpClient client;
 		public ObservableCollection<TodoItem> Items { get; private set; }
-		private const String Url = "http://192.168.2.100:8080/api/todo{0}";
+		const string Url = "http://192.168.2.100:8080/api/todo{0}";
 
 		public TodoService()
 		{

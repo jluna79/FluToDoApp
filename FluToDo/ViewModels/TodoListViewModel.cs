@@ -57,11 +57,6 @@ namespace FluToDo.ViewModels
 
 		public TodoListViewModel()
 		{
-			//LoadList();
-				
-			//TodoList.Add(new TodoItem { Key = "qwertty1", Name = "Todo 1", IsComplete = false });
-			//TodoList.Add(new TodoItem { Key = "qwertty2", Name = "Todo 2", IsComplete = true });
-			//TodoList.Add(new TodoItem { Key = "qwertty3", Name = "Todo 3", IsComplete = false });
 
 		}
 

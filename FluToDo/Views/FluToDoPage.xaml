@@ -6,7 +6,6 @@
 		x:Class="FluToDo.FluToDoPage" Title="ToDo List">
 	<StackLayout>
 		<Label Text="Here are your tasks" VerticalOptions="Start" HorizontalOptions="Center" />
-<!--		x:Name="todoListView"  ItemsSource="{Binding TodoList}"-->
 		<ListView x:Name="todoListView" ItemsSource="{Binding TodoList}"
 				ItemSelected="OnItemSelected" 
 				IsPullToRefreshEnabled="true" 
